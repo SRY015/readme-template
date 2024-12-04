@@ -1,0 +1,239 @@
+Some useful commands -->
+
+. pwd/dir --> present working directory --> Basically used to check current directory you are present in.
+. ls --> this command is used to see the files and folders present in the current directory.
+. cd --> Change directory ---> this is used to move to any folder or directory. ex --> cd Movies ---> here "Movies" is the folder name.
+. cd .. --> this command is used to come out from a directory.
+. mkdir --> make directory --> this command is used to create a folder or directory. ex --> mkdir learn --> here "learn" is the name of the folder or directory which we wanted to create.
+. rmdir --> remove directory --> this command is used to delete any existing folder or directory. ex --> rmdir learn --> here "learn" is the folder or directory name.
+. cls --> this command is used to clear the terminal.
+. notepad test1.txt --> this command will create a file and open it on notepad you just need to click on the yes button on the notepad. here "test1" is the file name.
+. del --> this command is used to delete any file from the current directory. ex --> del index.html --> here "index.html" is the file name which we wanted to delete.
+. echo --> this command is used to write something inside a file. ex --> echo "This is the content which we want to write into the file" > test.txt --> here test.txt is the file name where we want to write something.
+. type --> It is used to view the content of any file. ex --> type test.txt --> here test.txt is the file name.
+. code test1 ---> this command is used to open a file in vs code. Here, "test1" is the name of the file which we want to open in vscode.
+
+git config --->
+
+. git config user.name "Sandip-Das" ---> this command is used to set user name for git. Here  "Sandip-Das" is the username which we wanted to set.
+. git config user.email "sandip@pravaahconsulting.com" ---> this command is used to set the user email for git. Here "sandip@pravaahconsulting.com" is the email which we wanted to set.
+. git config --unset user.name ---> This command is used to unset an user name of the git.
+. git config user.name ---> this command is to check the user name set to git.
+. git config user.email ---> to check the user email set to git.
+. git config --list ---> this command is used to see all the details set to git.
+. git config --global --list ---> This command is used to check the global git configuration of your system.
+
+
+SSH Key --->
+
+SSH stands for Secure socket shell or Secure shell. It is a communication protocol which is used to connect two computers securely.
+
+
+Git Staging & Unstaging --->
+
+If we want to bring one file from the unstaging area to staging area then there are multiple methods --->
+. git add fileName  ---> this command is used to bring a specific file from the unstaging area to staging area.
+. git add -A [A is shorthand for all] ---> It is used to stage all the changed file in directory or subdirectory.
+. git add . ---> This is used to stage all changed file in directory but not in the subdirectory.
+. git add *.js (directory wildCard) ---> this is used to stage all changed files whose extension is ".js" in a directory.
+. git add **.js (directory & subdirectory wildCard) ---> this is used to stage all the changed files whose extension is ".js" in directory as wll as subdirectory.
+
+. git rm -- cached fileName ---> This command is used to unstage a file from the staging area.
+. gti checkout text2.txt  ---> this command is used to discard the changes before adding it to the stagging area. Here "test2.txt" is the file name whose changes we want to discard.
+
+
+commit --->
+
+. For moving staging to local repo we can use following command ->
+    git commit -m "message here"
+        --> the message should be clear and understandable.
+. For staging and commit directly we use the below command ->
+    git commit -am "message here"
+. git log --> this command is used to see the commit history.
+. git log --oneline ---> this command is used to see the commit history in one line for each commit.
+. git show commit_id / git show / git show HEAD ---> this command is used to see what we did in a particular commit.
+. HEAD always indicates to the recent commit.
+
+Uncommit --->
+
+. If all you want to do is undo the act of committing, leaving everything else intect, use :-> git reset --soft HEAD^
+. If all you want to do is undo the act of committing, and also removing from the staging area, use :-> git reset HEAD^
+. And if you actually want to completely undo it, throwing away all the uncommitted changes, resetting everything to the previous commit, use :->
+    git reset -hard HEAD^
+
+
+git HEAD & undo --->
+
+Basically when we perform multiple commit, then the HEAD will be present in the last commit. But if we want to move our HEAD to any other 
+commit to perform some operaton then we have to use the below command --->
+   . git checkout 46c4914  ---> this command will move the head from one commit to another commit. Here "46c4914" is the commit id where we want to
+                                move our HEAD. This is very safe way to move from one commit to another commit.
+After moving our HEAD to some other commit if we want to go back to our recent commit then we have to use the below command --->
+    . git checkout master ---> this command will move our HEAD to the most recent commit.
+
+
+.gitignore --->
+
+The .gitignore file is used to mention the name of the files which we don't want to share in github.
+Inside the .gitignore file file I write like --
+    test.txt  --> gitignore will not take the test.txt file to the stagging area. That means it will not be uploaded to github.
+    .env      --> If I write .env inside the gitignore file then git will ignore this file and this file will not be uploaded to github.
+    *.txt     --> If I write *.txt inside the gitignore file then git will ignore all the files whose extension is .txt and the file will not be uploaded to github.
+    !main.txt --> If I write !main.txt after *.txt inside the gitignore file then git will ignore all the txt files except the main.txt file.
+    test?.txt --> If I write test?.txt inside the gitignore file then git will ignore all the txt files whose name is starting with test. ex-> test1.txt, test2.txt, test3.txt.
+    temp/     --> If I write temp/ inside the gitignore file the git will ignore all the files which are there inside the temp directory or folder.
+
+
+Git Aliases ----> 
+
+By using git aliases we can make short cut for our commonly used git commands. For making the short cuts we have to use the below command -->
+    . git config --global alias.st "status"  --> Here in this command we are making the shorthand for the the command "status". And we have
+    used --global for making this shorthand globally for our system.
+    . git config --global --list --> This command is used to check all the global configuration for our system and also we can check all the aliases set by us.
+
+
+Markdown ----->
+
+1. What and why README.md ?
+    Markdown is an easy-to-use markup language that is used with plain text to add formatting elements (headings, bulleted lists, URLs)
+    to plain text without the use of a formal text editor or the use of HTML tags. Markdown is device agnostic and displays 
+    the writing format consistently across device types. The extension for the Markdown file is ".md".
+
+2. How to make a comment in Markdown ?
+    We can use the same approach how we used in html to comment some html code.
+    ex: --> <!--markdown tutorial-->
+
+3. How to use normal text and new line?
+    For writing any normal text we have to simply write the text and for using new line we can use double space or html <br/> tag
+    after the line where we want to put new line.
+
+4. How can we use horizontal line?
+    If we to use the horizontal line in markdown then we can use --- and press enter or we can use html <hr/> tag.
+
+5. How to create heading ?
+    For making any heading in markdown we can use the # symbol before the text which we want to make as heading or we can also use the html <h1> to <h6> tag to make a heading.
+    Here, # = <h1>
+          ## = <h2>
+          ### = <h3>
+          #### = <h4>
+          ##### = <h5>
+          ###### = <h6>
+
+6. How to make a text italic?
+    To make a text italic we can use the html <i> tag or we can use the _(underscore symbol) before and after the text which we want to make italic.
+
+7. How to use strikethrough in markdown?
+    If we want to use strikethrough with a text then we can use html <del> tag or can use the ~~ symbol before and after the text on which we want to use strikethrough.
+
+8. why and how to use inline code block?
+    If we want to put some single line code and stylize it properly then we have to use inline code block. For that we have to use the ` (backtick symbol) before and after the code.
+    Syntax --> `<h1> This is a heading tag </h1>`
+
+9. Why and how to use multiple line code block ?
+    If we want to put some multiple line code and stylize it properly the we have to use multiple line code block. For that we have to use ``` (three times backtick) before and after the code. And after the ``` symbol which we are using before the code we have to give the type of the code means which code language we are going to put inside this. 
+    Syntax --> ```html
+                <html>
+                <head></head>
+                <body></body>
+                </html>
+              ```
+              ```javascript
+                function add(){
+                    var a = 10 + 20;
+                    console.log(a);
+                }
+              ```
+
+
+Remote Repository --->
+
+. git remote -v  ---> This command is used to show the remote repository alone with the url.
+. git remote add origin https://github.com/SRY015/life-story.git ---> this command is used to connect the local repository with the remote repository.
+    Here "https://github.com/SRY015/life-story.git" is the repository link or url to which we want to connect out local repository.
+. git clone https://github.com/SRY015/life-story.git ---> this command is used to copy some project which is present in the remote repository to your local system or repository.
+    Here "https://github.com/SRY015/life-story.git" is the repository link or url from which you want to copy some project to your local repository.
+. git pull origin master ---> This command is used to pull the changes happened in the remote repository to your local repository.
+    Here "master" is the name of the branch from which you want to pull the changes.
+
+
+Branch and merge --->
+
+Branch is a new and separate branch of the master repository.
+In a big project we separate the tasks / features and create branch so that editing in the new branch does not affect the master branch.
+. git branch ---> this command is used to see all the branches of a repository.
+. git branch feature1 ---> this command is used to create a new branch. Here "feature1" is the name of the new branch.
+. git checkout feature1 ---> this command is used to switch from one branch to another branch. Here "feature1" is the name of the branch to which we want to switch.
+. git branch -D feature1 ---> this command is used to delete a existing branch. Here "feature1" is the name of the branch which we want to delete.
+. git checkout -b "feature1" ---> this command is used to create a new branch as well as to switch to that newly created branch at the same time.
+                                    Here "feature1" is the name of the name of the new branch which we want to create.
+. git merge "feature1" ---> this command is used to merge the changes of one branch with another branch.
+                            . For merging the changes of one branch to another branch we have follow the below steps -->
+                            i. Create a new branch or switch to that branch from where you want to make some changes in your project.
+                            ii. After making the changes add and commit that changes.
+                            iii. After that switch to that branch from where you want to merge the new changes.
+                            iv. After that merge the changes by using the given command --> git merge feature1. Here "feature1" is the name of the branch to which you want to merge the code.
+                            v. After merging the code pull the changes from that branch only where you merged the code by using the command --> git pull.
+                            vi. After that push the changes to that branch only where you merged all the codes.
+
+. 2 way merge / fast-forward merge --->
+    It is also known as fast forward merge.
+    Two-way merge is a simple case where merging involves only two snapshot.Let’s clear it up with an example. Let’s say that
+    you wish to merge your feature branch with master. Assume that the master branch has no more commits from the time you created a new branch.
+    When the feature branch has to be merged with the master branch, the two recent commits on either of these branches C3 and F2 are compared
+    and merged automatically unless there are no conflicts, for which manual resolution is required.This is also called a fast-forward merge
+    as the master branch is behind two commits before merge and a merge moves it forward.
+
+. 3 way merge --->
+    However, a fast-forward merge is not possible if the branches have diverged. When there is not a linear path to the target branch,
+    Git has no choice but to combine them via a 3-way merge. 3-way merges use a dedicated commit to tie together the two histories.
+    The nomenclature comes from the fact that Git uses three commits to generate the merge commit: the two branch tips and their common ancestor.
+
+
+merge conflict on git ---->
+
+If the two branches you're trying to merge, both changed the same part of the same file, Git would not be able to figure out which version to use.
+When such a situation occurs, it stops right before the merge commit so that you can resolve the conflicts manually.
+The great part of Git's merging process is that it uses the familiar edit/stage/commit workflow to resolve merge conflicts.When you encounter a merge conflict,
+running the git status command shows you which files need to be resolved.
+    To resolve the conflict, we have to go to that file where conflict has happened and then we have to decide the changes which we want keep or remove.
+    After that we have to add and commit that changes from the master branch.
+    To know more goto --> https://www.atlassian.com/git/tutorials/using-branches/git-merge#:~:text=marker%20is%20the-,receiving%20branch%20and,-the%C2%A0part%20after
+
+Github issues --->
+
+You can create issues in your repository to plan, discuss, and track work. Issues are quick to create, flexible, and can be used
+in many ways. Issues can track bug reports, new features and ideas, and anything else you need to write down or discuss with your team.
+You can also break your work down further by adding sub-issues and easily browse the full hierarchy of work to be done.
+
+Issues can be created in a variety of ways, so you can choose the most convenient method for your workflow. For example,
+you can create an issue from a repository, while adding sub-issues, convert a comment in an issue or pull request, create an issue from
+a specific line of code, or via a URL query. You can also create an issue from your platform of choice: through the web UI,
+GitHub Desktop, GitHub CLI, GraphQL and REST APIs, or GitHub Mobile.
+
+
+Github Fork --->
+
+Fork ---> git clone ---> make pull request
+. A fork is a copy of a repository. This is useful when you want to contribute to someone else's project or start your own project based on theirs.
+. Forking own repository is not possible.
+. Fork is not command, use github and fork.
+
+--> When we fork a project from some other's repository, one copy of that project will come to our github account. After getting that project in our
+    github, we have to clone that project to our local repository. After that we will make some changes on the existing project and commit and push that 
+    project to github. After pushing the code to our github account we will create a pull request for that person from whome we have fork the project.
+    The person will check the changes and merger the changes to his/her project.
+
+
+Collaboration on github --->
+
+Contribution and collaboration are not same.
+For collaboration we do not need to fork and clone. only clone is ok.
+Owner can set different rules and permissions to a repository for various purpose.
+
+How to add github collaborator ?
+    . Create a repository and add some commits if possible.
+    . select repository --> settings --> manage access --> confirm password --> invite a collaborator --> search by name/email/username --> select and add.
+    . check your invitation and accept.  
+
+
+
